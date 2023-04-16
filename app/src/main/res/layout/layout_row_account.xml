@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="iconLeft"
+            type="android.graphics.drawable.Drawable" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relativeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/TextContent"
+                android:text="@{title}"
+                android:drawablePadding="@dimen/_10dp"
+                android:textColor="@color/colorPrimary"
+                android:drawableLeft="@{iconLeft}"
+               />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30dp"
+                android:layout_alignParentEnd="true"
+                android:text=">"
+                android:textColor="@color/hDDD2D2"
+                android:textSize="@dimen/_25sp" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/layout_underlined_account" />
+    </LinearLayout>
+</layout>

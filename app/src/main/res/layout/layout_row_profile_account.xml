@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="text"
+            type="String" />
+    </data>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/_48dp"
+               android:gravity="center_vertical"
+               android:paddingStart="@dimen/_10dp"
+               android:paddingEnd="@dimen/_10dp">
+
+               <TextView
+                   style="@style/TextContent"
+                   android:text="@{title}"
+                   />
+
+               <TextView
+                   style="@style/TextContent"
+                   android:layout_alignParentEnd="true"
+                   android:layout_marginStart="@dimen/_10dp"
+                   android:hint="@{text}"
+                   />
+           </RelativeLayout>
+
+           <include layout="@layout/layout_underlined_account" />
+       </LinearLayout>
+</layout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.nhom5.appdulich.viewmodel.account.RegisterViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/headerRegister"
+            layout="@layout/layout_header_account"
+            app:title='@{@string/lbl_register1}'/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewBottom"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                style="@style/Edittext"
+                android:id="@+id/edtName"
+                android:autofillHints="@string/hint_name"
+                checkError='@{""}'
+                android:text="@={viewModel.name}"
+                android:drawableStart="@drawable/ic_baseline_person_add_24"
+                android:hint="@string/hint_name"
+                android:inputType="text" />
+
+            <EditText
+                style="@style/Edittext"
+                android:id="@+id/edtEmail"
+                checkError='@{""}'
+                android:text="@={viewModel.email}"
+                android:autofillHints="@string/hint_email"
+                android:drawableStart="@drawable/ic_email"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                style="@style/Edittext"
+                android:id="@+id/edtPassword"
+                checkError='@{""}'
+                android:text="@={viewModel.password}"
+                android:autofillHints="@string/hint_password"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRegister"
+                style="@style/Button"
+                android:text="@string/btn_register" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:gravity="center">
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@string/lbl_you_have_account"
+                />
+
+            <TextView
+                android:id="@+id/txtBack"
+                style="@style/TextTitle"
+                android:text="@string/btn_login"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

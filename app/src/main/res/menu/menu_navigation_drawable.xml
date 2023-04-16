@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/fragmentMap"
+            android:icon="@drawable/ic_map"
+            android:title="@string/lbl_map" />
+        <item
+            android:id="@+id/fragmentFavorite"
+            android:icon="@drawable/ic_favorite"
+            android:title="@string/lbl_favorite_history" />
+        <item
+            android:id="@+id/fragmentSearch"
+            android:icon="@drawable/ic_search"
+            android:title="@string/lbl_search" />
+        <item
+            android:id="@+id/fragmentImageInside"
+            android:icon="@drawable/ic__image"
+            android:title="@string/lbl_image" />
+    </group>
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/group_account"
+     >
+        <item
+            android:id="@+id/fragmentAbout"
+            android:icon="@drawable/ic_about"
+            android:title="@string/lbl_about" />
+        <item
+            android:id="@+id/fragmentSetting"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/lbl_setting" />
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/lbl_logout" />
+    </group>
+</menu>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="place"
+            type="com.nhom5.appdulich.data.model.Place" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <TextView
+            android:layout_width="@dimen/_20dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@color/black" />
+
+        <TextView
+            style="@style/TextTitle"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="@{place.name}" />
+
+        <TextView
+            style="@style/TextContent"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:padding="@dimen/_10dp"
+            android:text="@{place.introduce}"
+            android:textSize="@dimen/_14sp" />
+
+        <include layout="@layout/layout_underlined_account" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDirection"
+            style="@style/Button"
+            android:layout_marginBottom="@dimen/_30dp"
+            android:text="@string/lbl_directional" />
+    </LinearLayout>
+</layout>

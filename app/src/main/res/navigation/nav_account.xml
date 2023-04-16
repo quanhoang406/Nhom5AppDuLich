@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_account"
+    app:startDestination="@id/fragmentSplash">
+    <fragment
+        android:id="@+id/fragmentSplash"
+        android:name="com.nhom5.appdulich.ui.fragment.splash.FragmentSplash"
+        android:label="FragmentSplash"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_right"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_fragmentSplash_to_fragmentLogin"
+            app:destination="@id/fragmentLogin"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragmentSplash"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.nhom5.appdulich.ui.fragment.acount.FragmentLogin"
+        android:label="FragmentLogin"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentRegister"
+            app:destination="@id/fragmentRegister"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_fragmentLogin_to_bottomNavigation"
+            app:destination="@id/bottomNavigation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragmentLogin"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRegister"
+        android:name="com.nhom5.appdulich.ui.fragment.acount.FragmentRegister"
+        android:label="FragmentRegister"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_fragmentRegister_to_bottomNavigation"
+            app:destination="@id/bottomNavigation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragmentLogin"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        tools:layout="@layout/fragment_bottom_navigation"
+        android:id="@+id/bottomNavigation"
+        android:name="com.nhom5.appdulich.ui.fragment.bottom_navigation.BottomNavigation"
+        android:label="BottomNavigation" >
+        <action
+            android:id="@+id/action_bottomNavigation_to_fragmentLogin"
+            app:destination="@id/fragmentLogin"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/bottomNavigation"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>

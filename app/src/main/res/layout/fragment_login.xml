@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.nhom5.appdulich.viewmodel.account.LoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/headerLogin"
+            layout="@layout/layout_header_account"
+            app:title='@{@string/lbl_login}' />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewBottom"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtEmail"
+                style="@style/Edittext"
+                android:autofillHints="@string/hint_email"
+                android:drawableStart="@drawable/ic_email"
+                android:hint="@string/hint_email"
+                checkError='@{""}'
+                android:inputType="textEmailAddress"
+                android:text="@={viewModel.email}" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                style="@style/Edittext"
+                checkError='@{""}'
+                android:autofillHints="@string/hint_password"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:text="@={viewModel.password}" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                style="@style/Button"
+                android:text="@string/btn_login" />
+
+            <TextView
+                android:id="@+id/txtRegister"
+                style="@style/TextContent"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_marginTop="@dimen/_30dp"
+                android:text="@string/lbl_register"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:focusable="true" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

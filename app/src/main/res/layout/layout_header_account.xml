@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+    <merge>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/bgHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150dp"
+            android:background="@color/colorPrimary" />
+
+        <View
+            android:id="@+id/viewBottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100dp"
+            android:layout_below="@+id/bgHeader"
+            android:background="@drawable/wave" />
+
+        <TextView
+            android:id="@+id/txtLogin1"
+            style="@style/TextTitle"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_50dp"
+            android:layout_marginBottom="@dimen/_5dp"
+            android:text="@string/lbl_wellcome" />
+
+        <TextView
+            android:id="@+id/txtLogin"
+            style="@style/TextTitle"
+            android:textColor="@color/white"
+            android:layout_below="@+id/txtLogin1"
+            android:text="@{title}"
+            android:textSize="@dimen/_30sp" />
+
+        <ImageView
+            android:id="@+id/imgPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_48dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:layout_toEndOf="@+id/txtLogin1"
+            android:src="@drawable/ic_person" />
+    </merge>
+</layout>

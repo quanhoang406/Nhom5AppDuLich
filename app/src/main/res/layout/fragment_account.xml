@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.nhom5.appdulich.viewmodel.SettingAccountViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250dp"
+            android:background="@drawable/background"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_100dp"
+                android:layout_height="@dimen/_100dp"
+                android:contentDescription="@string/lbl_avatar"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_account"
+                app:tint="@color/white" />
+
+            <TextView
+                style="@style/TextTitle"
+                android:text="@={viewModel.name}"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginTop="@dimen/__30dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:layout_marginBottom="@dimen/_2dp"
+            app:cardCornerRadius="@dimen/_10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10dp">
+
+                <include
+                    android:id="@+id/rowAccountProfile"
+                    layout="@layout/layout_row_account"
+                    app:iconLeft='@{@drawable/ic_account}'
+                    app:title='@{@string/lbl_my_profile}' />
+
+
+                <include
+                    android:id="@+id/rowAccountSupport"
+                    layout="@layout/layout_row_account"
+                    app:iconLeft='@{@drawable/ic_help}'
+                    app:title='@{@string/lbl_help_support}' />
+
+                <include
+                    android:id="@+id/rowAccountAbout"
+                    layout="@layout/layout_row_account"
+                    app:iconLeft='@{@drawable/ic_about}'
+                    app:title='@{@string/lbl_about}' />
+
+                <include
+                    android:id="@+id/rowAccountSetting"
+                    layout="@layout/layout_row_account"
+                    app:iconLeft='@{@drawable/ic_setting}'
+                    app:title='@{@string/lbl_setting}' />
+
+                <include
+                    android:id="@+id/rowAccountLogout"
+                    layout="@layout/layout_row_account"
+                    app:iconLeft='@{@drawable/ic_logout}'
+                    app:title='@{@string/lbl_logout}' />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</layout>
